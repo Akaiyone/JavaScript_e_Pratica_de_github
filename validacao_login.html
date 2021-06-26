@@ -8,7 +8,7 @@
 
 while(tentativasAtuais >= 0 ){
 
-    //Globais
+    //Globais 
     
 
     //entradaUsuario
@@ -24,7 +24,7 @@ while(tentativasAtuais >= 0 ){
     
     if(autorizado){
         alert("Bem-vindo(a) ao sistema " + loginInformado);
-        dw("sou foda")
+        dw("Entrada Autorizada")
         break;
     }else{
          alert("Entrada incorreta, Tente novamente.")
@@ -34,6 +34,7 @@ while(tentativasAtuais >= 0 ){
     
     //quebrar
         if(tentativasAtuais == 0){
+            alert("Muitas tentativas inválidas.")
             dw("Entrada revogada.");
         break;
         }
