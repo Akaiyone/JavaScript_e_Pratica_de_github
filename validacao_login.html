@@ -4,33 +4,43 @@
         document.write(frase)
         document.write("<br><hr>")
     }
+    var tentativasAtuais = 3;
+
+while(tentativasAtuais >= 0 ){
+
+    //Globais
+    
+
+    //entradaUsuario
+    var loginInformado = prompt("Insira o Login");
+    var senhaInformada = prompt("Insira A senha.");
+
+    //entradaSistema
+    var loginCadastrado = "Akaiyone";
+    var senhaCadastrada = "miaaau";
 
 
+    var autorizado = loginCadastrado == loginInformado && senhaCadastrada == senhaInformada;
+    
+    if(autorizado){
+        alert("Bem-vindo(a) ao sistema " + loginInformado);
+        dw("sou foda")
+        break;
+    }else{
+         alert("Entrada incorreta, Tente novamente.")
+            tentativasAtuais = tentativasAtuais - 1 ;
+    }
 
-    var tentativas = 3;
-    var loginCadastrado = "alura";
-    var senhaCadastrada = "alura321";
-
-while(tentativas >= 1){
-
-    var loginInformado = prompt("Informe seu login");
-    var senhaInformada = prompt("Informe sua senha");
-
-    if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
-
-        alert("Bem-vindo ao sistema " + loginInformado);
-
-    } else {
-        tentativas = tentativas - 1;
-            if(tentativas == 0){
-                alert("Entrada incorreta, Atingido o limite de tentativas.")
-                    }else{
-                        alert("Entrada incorreta, Tente novamente.")
-                    }
-            }
+    
+    //quebrar
+        if(tentativasAtuais == 0){
+            dw("Entrada revogada.");
+        break;
+        }
+    
 
 }
-dw("Entrada revogada.");
+
 
 
 </script>
