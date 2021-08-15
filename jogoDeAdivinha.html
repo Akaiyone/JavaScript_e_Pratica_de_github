@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+
+<input/>
+<button>Test The Secret</button>
+<script type="text/javascript">
+		
+		//var secret = Math.round(Math.random() * 10);
+		var segredos = [3,7,2,10]
+		var button = document.querySelector("button");
+		var input = document.querySelector("input");
+		var finded = false;
+		input.focus();
+
+		function verify(){
+
+			for(var posicao = 0; posicao > segredos.length; posicao++){
+				if(input.value == secret){
+				alert("You're Right!!");
+				document.body.style.backgroundColor = "green";
+				finded = true;
+				break;
+				}
+				if(finded == false){
+					alert("YOU MISSED!")
+					document.body.style.backgroundColor = "red";
+				}
+				input.value = "";
+				input.focus();
+			}
+
+			
+	}
+
+		button.onclick = verify;
+		
+</script>
