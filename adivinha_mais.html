@@ -1,0 +1,73 @@
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="mystyle.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> 	 
+
+</head>
+<h1>SORTEADOR.</h1>
+
+<input/>
+ <button type="button">Click Me!</button> 
+
+<style>
+
+	body{
+		background-color:orange;
+	}
+
+	h1{
+		font-family: 'Oswald', sans-serif;
+		font-size: 43px;
+		text-align: center;
+		color: whitesmoke;
+	}
+
+	botao{
+
+	}
+</style>
+<script type="text/javascript">
+		
+		//var secret = Math.round(Math.random() * 10);
+		var segredos = [3,7,2,10];
+		
+		var input = document.querySelector("input");
+
+		//teste de evento de teclado
+		document.body.addEventListener('keypress', function (event) {
+  		const key = event.key;
+  		const code = event.keyCode;
+  		console.log(`Key: ${key}, Code ${code}`);
+});
+
+		function verify(){
+			input.focus();
+			
+			var achou = false;
+
+			for(var posicao = 0; posicao < segredos.length; posicao++){
+
+				if(input.value == segredos[posicao]){
+
+					alert("Voce acertou!");
+					document.body.style.backgroundColor = "green";
+					achou = true;
+
+				break;
+				}
+
+				input.value = "";
+				input.focus();
+			}
+			if(achou == false){
+					alert("voce errou!");
+					document.body.style.backgroundColor = "red";
+				}
+			
+	}
+		var button = document.querySelector("button");
+		button.onclick = verify;
+		
+</script>
