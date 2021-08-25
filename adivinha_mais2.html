@@ -1,0 +1,100 @@
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="mystyle.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> 	 
+
+</head>
+<h1>L.D.P.</h1>
+
+<input/>
+ <button type="button">Comparar com o segredo</button> 
+
+<style>
+
+	body{
+
+		/*background-image:url("https://wallpaperaccess.com/full/1419245.jpg")*/
+		background-color: rgb(184, 127, 169);
+
+	}
+
+	h1{
+		font-family: 'Oswald', sans-serif;
+		font-size: 43px;
+		text-align: center;
+		color: rgb(126, 240, 187);
+	}
+
+	h1:hover{
+		color: rgb(98, 150, 199);
+		text-shadow: 2.3px 2.3px rgb(61, 106, 114);
+		transition: 0.3s;
+		
+	}
+</style>
+<script type="text/javascript">
+		
+		//var segredos = Math.round(Math.random() * 5);
+		
+		//dados pré-definidos
+		var segredos = [4,5,1,78,5];
+		console.log(segredos);
+		
+		//entrada do usuario.
+		var input = document.querySelector("input");
+
+
+		function gerarNumero(){
+			return Math.round(Math.random() * 10);
+			}
+
+  		//funcao verifica se o input é compativel com o numero gerado ou armazenado.
+		function verificar(){
+			input.focus();
+			
+			//var global condicional para ativar o if de erro
+			var achou = false;
+
+			//for de "varredura"; repete o loop até acabar o array
+			for(var posicao = 0; posicao < segredos.length; posicao++){
+
+				//no meio do loop verifica se o input é igual aos dados.
+				if(input.value == segredos[posicao]){
+					//em caso de acerto:
+					//mensagem que avisa que voce acertou
+					alert("Voce acertou!");
+					//mudar cor do fundo para verde
+					document.body.style.backgroundColor = "darkgreen";
+					//mudar estado de achou para true para nao executar o "else"
+					achou = true;
+					//limpar caixa de input
+					input.value = "";
+					//sair do loop
+				break;
+				}
+				//em caso de erro o input é limpo e o foco se volta a ele.
+				input.value = "";
+				input.focus();
+			}
+
+			//condiçao de falha caso nenhum numero pre definido seja encontrado se baseia no 
+			//"achou = false" local na funcao
+
+			if(achou == false){
+
+					alert("voce errou!");
+					//muda a cor para vermelho
+					document.body.style.backgroundColor = "darkred";
+					input.value = "";
+					input.focus();
+				}
+			
+	}
+		//definir botao no html
+		var button = document.querySelector("button");
+		//chamada da funçao de verificar atraves do botao (nao contém "()")
+		button.onclick = verify;
+		
+</script>
