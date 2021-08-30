@@ -1,54 +1,30 @@
 <meta charset="utf-8">
-<canvas width="300" height="300" ></canvas>
+<canvas width="700" height="700" ></canvas>
 <button>Gerar quadrados</button>
+<input>
 
 <script type="text/javascript">
 	var tela = document.querySelector("canvas");
 	var pincel = tela.getContext('2d');
 
-	function desenharQuadrado(){
+	function desenharQuadrado(x,y,cor){
 
-	pincel.fillStyle = 'red';
+	pincel.fillStyle = cor;
 	pincel.fillStroke = 'black';
-	pincel.fillRect(0, 0, 50, 50)
-	pincel.strokeRect(0, 0, 50, 50)
-
-	pincel.fillStyle = 'orange';
-	pincel.fillStroke = 'black';
-	pincel.fillRect(0, 50, 50, 50)
-	pincel.strokeRect(0, 50, 50, 50)
-
-	pincel.fillStyle = 'yellow';
-	pincel.fillStroke = 'black';
-	pincel.fillRect(0, 100, 50, 50)
-	pincel.strokeRect(0, 100, 50, 50)
-	
-	pincel.fillStyle = 'green';
-	pincel.fillStroke = 'black';
-	pincel.fillRect(50, 100, 50, 50)
-	pincel.strokeRect(50, 100, 50, 50)
-
-	pincel.fillStyle = 'cyan';
-	pincel.fillStroke = 'black';
-	pincel.fillRect(100, 100, 50, 50)
-	pincel.strokeRect(100, 100, 50, 50)
-
-	pincel.fillStyle = 'blue';
-	pincel.fillStroke = 'black';
-	pincel.fillRect(100, 50, 50, 50)
-	pincel.strokeRect(100, 50, 50, 50)
-
-	pincel.fillStyle = 'purple';
-	pincel.fillStroke = 'black';
-	pincel.fillRect(100, 0, 50, 50)
-	pincel.strokeRect(100, 0, 50, 50)
-
-	pincel.fillStyle = 'black';
-	pincel.fillStroke = 'white';
-	pincel.fillRect(50, 0, 50, 50)
-	pincel.strokeRect(50, 0, 50, 50)
+	pincel.fillRect(x, y, 50, 50)
+	pincel.strokeRect(x, y, 50, 50)
 	
 	}
+
+	desenharQuadrado(0,0,"red")
+	desenharQuadrado(0,50,"orange")
+	desenharQuadrado(0,100,"yellow")
+	desenharQuadrado(50,100,"green")
+	desenharQuadrado(100,100,"cyan")
+	desenharQuadrado(100,50,"darkblue")
+	desenharQuadrado(100,0,"purple")
+	desenharQuadrado(50,0,"black")
+
 	var butao = document.querySelector('button');
 	butao.onclick = desenharQuadrado;
 	
